@@ -2,8 +2,11 @@
 </script>
 
 <template>
+  <main>
+    <h1> test </h1>
+  </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
