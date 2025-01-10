@@ -9,6 +9,7 @@ import TitleComp from './components/TitleComp.vue';
 
   <main>
     <TitleComp/>
+    
   </main>
 </template>
 
@@ -21,7 +22,6 @@ import TitleComp from './components/TitleComp.vue';
     .content{
       max-width: var(--bound);
       width: 100%;
-      background-color: aqua;
     }
   }
 </style>
