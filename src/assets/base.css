@@ -1,11 +1,21 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Colors */
 :root{
   --color-text: #303030;
   --color-background: #FFFFFF;
   --color-gray: #F0F0F0;
+  --color-gray-dark: #DCDCDC;
   --color-primary: #7D7CFE;
-  --color-primary-dark: #7D7CFE;
+  --color-primary-dark: #5857D3;
   --color-secondary: #4A90E2;
+  --color-secondary-dark: #3B74B7;
   --color-accent: #FF6F61;
+  --color-accent-dark: #D2574B;
+}
+:root{
+  --bound: 1160px; /*804px*/
 }
 :root{
   --size-underLink: 14px;
@@ -22,10 +32,13 @@
     --color-text: #D8D8D8;
     --color-background: #191919;
     --color-gray: #232323;
+    --color-gray-dark: #313131;
     --color-primary: #7D7CFE;
-    --color-primary-dark: #7D7CFE;
+    --color-primary-dark: #5857D3;
     --color-secondary: #4982C4;
+    --color-secondary-dark: #3B74B7;
     --color-accent: #D65D51;
+    --color-accent-dark: #D2574B;
   }
 }*/
 
@@ -34,31 +47,29 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+
+  letter-spacing: 2px;
+  font-family: "Plus Jakarta Sans", serif;
+}
+
+ol,ul{
+  list-style: none;
 }
 
 body {
   min-height: 100vh;
+
   color: var(--color-text);
   background: var(--color-background);
+
   transition:
     color 0.5s,
     background-color 0.5s;
+
   line-height: 1.25;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: var(--size-text);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

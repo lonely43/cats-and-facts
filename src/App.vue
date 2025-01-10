@@ -1,15 +1,27 @@
 <script setup lang="ts">
 import Navigation from './components/Navigation.vue';
+import TitleComp from './components/TitleComp.vue';
 
 </script>
 
 <template>
   <Navigation/>
+
   <main>
-    <h1 style="padding-top: 4rem;"> test </h1>
+    <TitleComp/>
   </main>
 </template>
 
 <style lang="scss" scoped>
+  main{
+    width: 100%;
 
+    padding-top: 2rem;
+
+    .content{
+      max-width: var(--bound);
+      width: 100%;
+      background-color: aqua;
+    }
+  }
 </style>
