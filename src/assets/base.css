@@ -16,7 +16,7 @@
   --size-h3: 36px;
 }
 
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: #D8D8D8;
@@ -27,7 +27,7 @@
     --color-secondary: #4982C4;
     --color-accent: #D65D51;
   }
-}
+}*/
 
 *,
 *::before,

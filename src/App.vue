@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import Navigation from './components/Navigation.vue';
+
 </script>
 
 <template>
+  <Navigation/>
   <main>
-    <h1> test </h1>
+    <h1 style="padding-top: 4rem;"> test </h1>
   </main>
 </template>
 
