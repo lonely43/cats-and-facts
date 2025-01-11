@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
-import {setBtnStyles, getPreset, setPreset} from "./btnUtils";
+import { setBtnStyles, getPreset, setPreset } from "./btnUtils";
 
 const props = defineProps<{
 	content: string
@@ -20,7 +20,7 @@ onMounted(() => {
 
 <template>
 	<button ref="btn">
-		<p>{{ content }}</p>
+		{{ content }}
 	</button>
 </template>
 
@@ -35,13 +35,30 @@ button {
 	border: none;
 	border-radius: 0.75rem;
 
-	p {
-		font-weight: 700;
-	}
+	font-weight: 700;
 
 	transition: 200ms;
+
+	position: relative;
+
+	&::before{
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-color: aqua;
+		border-radius: 0.75rem;
+
+		//got to btnUtils.ts
+	}
 	&:hover{
-		opacity: 0.8;
+		opacity: 0.9;
+		&::before{
+
+		}
 	}
 }
 </style>

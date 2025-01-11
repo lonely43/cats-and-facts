@@ -42,32 +42,15 @@ import ButtonComp from "./UI/ButtonComp.vue"
 		}
 	}
 
+	button{
+		font-size: 3em;
+	}
+
 	img {
 		width: 100%;
 		max-width: 480px;
 		object-fit: cover;
 		transform: translateY(-4.4rem);
-	}
-
-	@media screen and (max-width: 532px) {
-		.title{
-			h1 {
-				font-size: clamp(12vw, 1em, 10vw);
-			}
-			h3 {
-				font-size: clamp(6vw, 1em, 10vw);
-			}
-		}
-
-		button{
-			padding: .8rem 1.6rem !important;
-			border-radius: 16px !important;
-			font-size: clamp(4vw, .8em, 5vw) !important; 
-		}
-
-		img{
-			max-width: 300px;
-		}
 	}
 }
 </style>
