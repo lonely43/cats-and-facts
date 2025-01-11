@@ -26,6 +26,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 button {
+	cursor: pointer;
+
 	padding: 0.6rem 1.2rem;
 
 	width: fit-content;
@@ -35,6 +37,11 @@ button {
 
 	p {
 		font-weight: 700;
+	}
+
+	transition: 200ms;
+	&:hover{
+		opacity: 0.8;
 	}
 }
 </style>

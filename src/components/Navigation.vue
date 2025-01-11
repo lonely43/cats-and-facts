@@ -6,9 +6,9 @@ import ButtonComp from './UI/ButtonComp.vue';
 <template>
 	<nav>
 		<div class="content">
-			<h1>LONELY43🖐</h1>
+			<h1>LONELY43</h1>
 			<ul>
-            <li><a><ButtonComp content="Media" type="gray" /></a></li>
+            <li><a href=""><ButtonComp content="Media" type="gray" /></a></li>
 				<li><a><ButtonComp content="Source" type="primary" /></a></li>
 			</ul>
 		</div>
