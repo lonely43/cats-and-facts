@@ -15,15 +15,15 @@
   --color-accent-dark: #D2574B;
 }
 :root{
-  --bound: 1160px; /*804px*/
+  --bound: 72.5rem; /*804px*/
 }
 :root{
-  --size-underLink: 14px;
-  --size-link: 16px;
-  --size-text: 20px;
-  --size-h1: 72px;
-  --size-h2: 48px;
-  --size-h3: 36px;
+  --size-underLink: 0.875em; /* 14px */
+  --size-link: .9em; /* 16px */
+  --size-text: 1.1em; /* 20px */
+  --size-h1: 4em; /* 72px */
+  --size-h2: 3em; /* 48px */
+  --size-h3: 2.25em; /* 36px */
 }
 
 /*

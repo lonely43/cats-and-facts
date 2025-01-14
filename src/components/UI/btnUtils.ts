@@ -1,6 +1,8 @@
 export function setBtnStyles(button: any, presets: any){
+	let styleElem = document.head.appendChild(document.createElement("style"));
 	for(const key in presets){
 		button.value.style[key] = presets[key]
+		styleElem.innerHTML = "#theDiv:before {background: black;}";
 	}
 }
 

@@ -48,10 +48,6 @@ nav {
       ul {
          display: flex;
          gap: 1rem;
-
-         li{
-               
-         }
       }
 	}
 }
