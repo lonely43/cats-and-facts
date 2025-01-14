@@ -20,7 +20,9 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
+
 	width: 100%;
+	height: 4.2rem;
 
 	background-color: var(--color-background);
 	border-bottom: 4px solid var(--color-gray);
@@ -28,6 +30,7 @@ nav {
 	.content {
       max-width: var(--bound);
 		width: 100%;
+		height: 100%;
 
       margin: 0 auto;
       padding: 1rem 2rem;  
