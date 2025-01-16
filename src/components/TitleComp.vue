@@ -50,7 +50,7 @@ import ButtonComp from "./UI/ButtonComp.vue"
 		width: 100%;
 		max-width: 480px;
 		object-fit: cover;
-		transform: translateY(-4.4rem);
+		//transform: translateY(-4.4rem);
 	}
 }
 </style>

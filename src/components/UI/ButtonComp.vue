@@ -39,26 +39,9 @@ button {
 
 	transition: 200ms;
 
-	position: relative;
-
-	&::before{
-		position: absolute;
-		z-index: -1;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		content: "";
-		background-color: aqua;
-		border-radius: 0.75rem;
-
-		//got to btnUtils.ts
-	}
 	&:hover{
 		opacity: 0.9;
-		&::before{
-
-		}
+		transform: scale(0.96);
 	}
 }
 </style>
