@@ -33,6 +33,7 @@ import ButtonComp from "./UI/ButtonComp.vue"
 			font-size: var(--size-h1);
 			font-weight: 700;
 			background: -webkit-linear-gradient(0deg, var(--color-primary), var(--color-primary-dark));
+			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}
@@ -47,10 +48,11 @@ import ButtonComp from "./UI/ButtonComp.vue"
 	}
 
 	img {
+		z-index: -1;
 		width: 100%;
 		max-width: 480px;
 		object-fit: cover;
-		//transform: translateY(-4.4rem);
+		transform: translateY(-4.4rem);
 	}
 }
 </style>

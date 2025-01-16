@@ -1,21 +1,21 @@
-@import './base.css';
+@import "./base.css";
 
 #app {
-  max-width: var(--bound);
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  padding-top: 8rem;
-  font-weight: normal;
+	max-width: var(--bound);
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	padding-top: 8rem;
+	font-weight: normal;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 0 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 0 2rem;
 }
 
-a{
-  cursor: pointer;
-  text-decoration: none;
+a {
+	cursor: pointer;
+	text-decoration: none;
 }
 
 /*
