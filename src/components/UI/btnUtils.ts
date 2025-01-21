@@ -42,7 +42,7 @@ export function setPreset(type: string, preset: any){
 			let grayPresets = {
 				background: "var(--color-gray)",
 				boxShadow: "0 4px 0 var(--color-gray-dark)",
-				color: "var(--color-primary)"
+				color: "var(--color-text)"
 			}
 			preset.setPresets(grayPresets)
 			break
@@ -51,8 +51,6 @@ export function setPreset(type: string, preset: any){
 			let accentPresets = {
 				background: "var(--color-accent)",
 				boxShadow: "0 4px 0 var(--color-accent-dark)",
-				fontSize: "var(--size-text)",
-				borderRadius: "1.25rem",
 				padding: ".9rem 1.6rem"
 			}
 			preset.setPresets(accentPresets)

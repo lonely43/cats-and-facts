@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Navigation from './components/Navigation.vue';
-import TitleComp from './components/TitleComp.vue';
+
+import TitleComp from './components/blocks/TitleComp.vue';
+import FactsComp from './components/blocks/FactsComp.vue';
 
 </script>
 
@@ -9,7 +11,7 @@ import TitleComp from './components/TitleComp.vue';
 
   <main>
     <TitleComp/>
-    
+    <FactsComp/>
   </main>
 </template>
 
@@ -18,10 +20,5 @@ import TitleComp from './components/TitleComp.vue';
     width: 100%;
 
     padding-top: 2rem;
-
-    .content{
-      max-width: var(--bound);
-      width: 100%;
-    }
   }
 </style>

@@ -13,7 +13,7 @@ function openList() {
 <template>
 	<nav>
 		<div class="content">
-			<h1>LONELY43</h1>
+			<h1>LONELY43🖐</h1>
 
 			<ul class="list">
 				<li>
@@ -45,13 +45,15 @@ function openList() {
 <style lang="scss" scoped>
 nav {
 	position: fixed;
+	z-index: 5;
 	top: 0;
 	left: 0;
 
 	width: 100%;
 	height: 4.2rem;
 
-	background-color: var(--color-background);
+	backdrop-filter: blur(1rem);
+	background-color: var(--color-background-backdrop);
 	border-bottom: 4px solid var(--color-gray);
 
 	.content {
@@ -126,6 +128,7 @@ nav {
 
 		.mobileList {
 			position: fixed;
+			z-index: 6;
 			top: 0;
 			left: 0;
 
