@@ -15,27 +15,23 @@
 .factsBlock {
 	position: relative;
 
+	margin: 0 calc((100vw - var(--bound)) / -2);
+
 	min-height: 100dvh;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	// background
 	&::before {
 		z-index: -1;
-		padding: 0;
-		margin: 0;
 		content: "";
 
 		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-
-		width: 99.3dvw;
-		height: 100%;
-		min-height: 100dvh;
+		left: 0;
+		top: 0;
+		width: 100%; // Занимаем всю ширину родителя
+		height: 100%; // Занимаем всю высоту родителя
 
 		background-color: var(--color-gray);
 
