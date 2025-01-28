@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Navigation from './components/Navigation.vue';
 
-import TitleComp from './components/blocks/TitleComp.vue';
-import FactsComp from './components/blocks/FactsComp.vue';
+import Hero from './components/blocks/Hero.vue';
+import Facts from './components/blocks/Facts.vue';
 
 </script>
 
@@ -10,8 +10,8 @@ import FactsComp from './components/blocks/FactsComp.vue';
   <Navigation/>
 
   <main>
-    <TitleComp/>
-    <FactsComp/>
+    <Hero />
+    <Facts/>
   </main>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<div class="factsBlock">
+	<div class="facts">
 		<div class="content">
 			<div class="title">
 				<h1>Fact of day:</h1>
@@ -12,7 +12,7 @@
 	</div>
 </template>
 <style lang="scss" scoped>
-.factsBlock {
+.facts {
 	position: relative;
 
 	margin: 0 calc((100vw - var(--bound)) / -2);

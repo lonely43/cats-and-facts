@@ -5,7 +5,7 @@ import CatPicture from "../UI/CatPicture.vue";
 </script>
 
 <template>
-	<div class="content">
+	<div class="hero">
 		<div class="title">
 			<h1>Meow there!</h1>
 			<h3>Facts about cats</h3>
@@ -18,7 +18,7 @@ import CatPicture from "../UI/CatPicture.vue";
 </template>
 
 <style lang="scss" scoped>
-.content {
+.hero {
 	width: 100%;
 	min-height: 100dvh;
 
