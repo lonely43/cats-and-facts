@@ -1,15 +1,18 @@
+@use "variables" as *;
 @use "./base.scss";
 
 #app {
 	padding: 0 2rem;
 	margin: 0 auto;
 
-	max-width: var(--bound);
+	max-width: $max-width;
 	width: 100%;
+	min-height: 100vh;
 
-	display: grid;
-	grid-template-columns: 1fr;
-
+	display: flex;
+	flex-direction: column;
+	gap: 8rem;
+	
 	font-weight: normal;
 }
 

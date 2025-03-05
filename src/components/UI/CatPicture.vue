@@ -9,9 +9,21 @@ onMounted(()=>{
 })
 </script>
 <template>
-   <img v-if="isDark" src="../../assets/imgs/cat-dark.svg" alt="">
-   <img v-if="!isDark" src="../../assets/imgs/cat.svg" alt="">
+   <div class="cat-picture">
+      <img v-if="isDark" src="../../assets/imgs/cat-dark.svg" alt="">
+      <img v-if="!isDark" src="../../assets/imgs/cat.svg" alt="">
+   </div>
 </template>
 <style lang="scss" scoped>
+   .cat-picture{
+      width: 100%;
 
+      img{
+         width: 100%;
+         height: auto;
+         
+         object-fit: cover;
+         display: block;
+      }
+   }
 </style>

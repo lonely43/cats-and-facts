@@ -1,0 +1,20 @@
+@use "variables" as v;
+
+$export-colors: (
+  'colorGray': v.$color-gray,
+  "colorGrayDark": v.$color-gray-dark,
+  'colorSecondary': v.$color-secondary,
+  'colorBackground': v.$color-background,
+  'colorPrimary': v.$color-primary,
+  'colorPrimaryDark': v.$color-primary-dark,
+  'colorAccent': v.$color-accent,
+  'colorAccentDark': v.$color-accent-dark,
+  'colorText': v.$color-text,
+  'sizeLink': v.$size-link,
+);
+
+@each $color, $value in $export-colors {
+  :export {
+    #{$color}: #{$value}
+  }
+}

@@ -18,6 +18,8 @@ import CatPicture from "../UI/CatPicture.vue";
 </template>
 
 <style lang="scss" scoped>
+@use "/src/assets/variables" as *;
+
 .hero {
 	width: 100%;
 	min-height: 100dvh;
@@ -32,15 +34,17 @@ import CatPicture from "../UI/CatPicture.vue";
 		text-align: center;
 
 		h1 {
-			font-size: var(--size-h1);
+			font-size: $size-h1;
 			font-weight: 700;
+
 			//pure gradient
-			background: linear-gradient(-45deg, var(--color-text), var(--color-primary), var(--color-accent));
+			background: linear-gradient(-45deg, $color-text, $color-primary, $color-accent);
 			background-size: 400% 400%;
 			animation: gradient 10s ease infinite;
 			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+			
 			@keyframes gradient {
 				0% {
 					background-position: 0% 50%;
@@ -55,12 +59,12 @@ import CatPicture from "../UI/CatPicture.vue";
 		}
 		h3 {
 			font-weight: 600;
-			font-size: var(--size-h3);
+			font-size: $size-h3;
 		}
 	}
 
 	button {
-		font-size: var(--text) !important;
+		font-size: $size-text !important;
 		border-radius: 100%;
 
 		position: relative;
@@ -74,22 +78,20 @@ import CatPicture from "../UI/CatPicture.vue";
 			height: 2rem;
 			width: 2rem;
 
-			background-color: var(--color-accent);
-			box-shadow: 0px 4px 0 var(--color-accent-dark);
+			background-color: $color-accent;
+			box-shadow: 0px 4px 0 $color-accent-dark;
 
 			border-radius: 0 0 0 100%;
 			transform: rotate(45deg) translateY(-50%);
 		}
 	}
 
-	img {
+	.cat-picture {
 		z-index: -1;
 
 		width: 100%;
 		max-width: 480px;
 
-		display: block;
-		object-fit: cover;
 		transform: translateY(-4.4rem);
 	}
 
@@ -121,7 +123,7 @@ import CatPicture from "../UI/CatPicture.vue";
 		button {
 			transform: scale(0.9);
 		}
-		img {
+		.cat-picture {
 			transform: translateY(-2em);
 		}
 	}

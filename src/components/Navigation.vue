@@ -43,6 +43,8 @@ function openList() {
 </template>
 
 <style lang="scss" scoped>
+@use "/src/assets/variables" as *;
+
 nav {
 	position: fixed;
 	z-index: 5;
@@ -53,11 +55,11 @@ nav {
 	height: 4.2rem;
 
 	backdrop-filter: blur(1rem);
-	background-color: var(--color-background-backdrop);
-	border-bottom: 4px solid var(--color-gray);
+	background-color: $color-background-backdrop;
+	border-bottom: 4px solid $color-gray;
 
 	.content {
-		max-width: var(--bound);
+		max-width: $max-width;
 		width: 100%;
 		height: 100%;
 
@@ -69,9 +71,9 @@ nav {
 		align-items: center;
 
 		h1 {
-			font-size: var(--size-text);
+			font-size: $size-text;
 			font-weight: 900;
-			color: var(--color-primary);
+			color: $color-primary;
 		}
 
 		.list {
@@ -94,7 +96,7 @@ nav {
 				width: 100%;
 				height: $height;
 
-				background-color: var(--color-text);
+				background-color: $color-text;
 
 				transition: 200ms;
 

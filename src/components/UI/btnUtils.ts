@@ -1,18 +1,22 @@
-export function setBtnStyles(button: any, presets: any){
-	for(const key in presets){
+import styles from "@/assets/variables.module.scss"
+const item = styles
+console.log(item)
+
+export function setBtnStyles(button: any, presets: any) {
+	for (const key in presets) {
 		button.value.style[key] = presets[key]
 	}
 }
 
-export function getPreset(){
+export function getPreset() {
 	return {
 		background: "",
 		boxShadow: "",
-		color: "var(--color-background)",
-		fontSize: "var(--size-link)",
+		color: `${styles.colorBackground}`,
+		fontSize: `${styles.sizeLink}`,
 
 		setPresets: function (obj: any) {
-			for(const key in obj){
+			for (const key in obj) {
 				// @ts-ignore
 				this[key] = obj[key]
 			}
@@ -20,37 +24,37 @@ export function getPreset(){
 	}
 }
 
-export function setPreset(type: string, preset: any){
+export function setPreset(type: string, preset: any) {
 	switch (type) {
 		case "primary":
 			let primaryPresets = {
-				background: "var(--color-primary)",
-				boxShadow: "0 4px 0 var(--color-primary-dark)",
+				background: `${styles.colorPrimary}`,
+				boxShadow: `0 4px 0 ${styles.colorPrimaryDark}`
 			}
 			preset.setPresets(primaryPresets)
 			break
 
 		case "secondary":
 			let secondaryPresets = {
-				background: "var(--color-secondary)",
-				boxShadow: "0 4px 0 var(--color-secondary-dark)"
+				background: `${styles.colorSecondary}`,
+				boxShadow: `0 4px 0 ${styles.colorSecondaryDark}`
 			}
 			preset.setPresets(secondaryPresets)
 			break
 
 		case "gray":
 			let grayPresets = {
-				background: "var(--color-gray)",
-				boxShadow: "0 4px 0 var(--color-gray-dark)",
-				color: "var(--color-text)"
+				background: `${styles.colorGray}`,
+				boxShadow: `0 4px 0 ${styles.colorGrayDark}`,
+				color: `${styles.colorPrimary}`
 			}
 			preset.setPresets(grayPresets)
 			break
 
 		case "accent":
 			let accentPresets = {
-				background: "var(--color-accent)",
-				boxShadow: "0 4px 0 var(--color-accent-dark)",
+				background: `${styles.colorAccent}`,
+				boxShadow: `0 4px 0 ${styles.colorAccentDark}`,
 				padding: ".9rem 1.6rem"
 			}
 			preset.setPresets(accentPresets)

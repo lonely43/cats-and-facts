@@ -9,16 +9,9 @@ import Facts from './components/blocks/Facts.vue';
 <template>
   <Navigation/>
 
-  <main>
-    <Hero />
-    <Facts/>
-  </main>
+  <Hero />
+  <Facts/>
 </template>
 
 <style lang="scss" scoped>
-  main{
-    width: 100%;
-
-    padding-top: 2rem;
-  }
 </style>

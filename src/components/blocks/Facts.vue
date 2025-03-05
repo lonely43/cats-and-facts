@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+	const fact = ref<string>("none")
+</script>
 <template>
 	<div class="facts">
 		<div class="content">
@@ -6,16 +10,16 @@
 				<h1>Fact of day:</h1>
 			</div>
 			<div class="info">
-				<p>While many cats enjoy milk, it will give some cats diarrhea.</p>
+				<p>{{ fact }}</p>
 			</div>
 		</div>
 	</div>
 </template>
 <style lang="scss" scoped>
+@use "/src/assets/variables" as *;
+
 .facts {
 	position: relative;
-
-	margin: 0 calc((100vw - var(--bound)) / -2);
 
 	min-height: 100dvh;
 
@@ -28,21 +32,22 @@
 		content: "";
 
 		position: absolute;
-		left: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		top: 0;
-		width: 100%; // Занимаем всю ширину родителя
+		width: 100dvw; // Занимаем всю ширину родителя
 		height: 100%; // Занимаем всю высоту родителя
 
-		background-color: var(--color-gray);
+		background-color: $color-gray;
 
-		border-radius: 3.75rem;
+		border-radius: 3.75rem 3.75rem 0 0;
 	}
 
 	.content {
 		.title {
 			h1 {
 				//pure gradient
-				background: linear-gradient(-45deg, var(--color-text), var(--color-primary), var(--color-accent));
+				background: linear-gradient(-45deg, $color-text, $color-primary, $color-accent);
 				background-size: 400% 400%;
 				animation: gradient 15s ease infinite;
 				background-clip: text;
