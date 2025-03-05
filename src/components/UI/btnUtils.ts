@@ -1,10 +1,8 @@
 import styles from "@/assets/variables.module.scss"
-const item = styles
-console.log(item)
 
-export function setBtnStyles(button: any, presets: any) {
-	for (const key in presets) {
-		button.value.style[key] = presets[key]
+export function setBtnStyles(button: any, preset: any) {
+	for (const key in preset) {
+		button.value.style[key] = preset[key]
 	}
 }
 

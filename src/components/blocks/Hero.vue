@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue"
 import ButtonComp from "../UI/ButtonComp.vue"
-import CatPicture from "../UI/CatPicture.vue";
+import CatPicture from "../UI/CatPicture.vue"
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import CatPicture from "../UI/CatPicture.vue";
 			<h3>Facts about cats</h3>
 		</div>
 
-		<ButtonComp content="Get started" type="accent" />
+		<ButtonComp type="accent"> Get started </ButtonComp>
 
 		<CatPicture />
 	</div>
@@ -44,7 +44,7 @@ import CatPicture from "../UI/CatPicture.vue";
 			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			
+
 			@keyframes gradient {
 				0% {
 					background-position: 0% 50%;

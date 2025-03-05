@@ -17,10 +17,10 @@ function openList() {
 
 			<ul class="list">
 				<li>
-					<ButtonComp content="Media" type="gray" />
+					<ButtonComp type="gray"> Media </ButtonComp>
 				</li>
 				<li>
-					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp content="Source" type="primary" /></a>
+					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp type="primary"> Source </ButtonComp></a>
 				</li>
 			</ul>
 
@@ -32,10 +32,10 @@ function openList() {
 
 			<ul ref="mobList" class="mobile mobileList">
 				<li>
-					<ButtonComp content="Media" type="gray" />
+					<ButtonComp type="gray"> Media </ButtonComp>
 				</li>
 				<li>
-					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp content="Source" type="primary" /></a>
+					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp type="primary"> Source </ButtonComp></a>
 				</li>
 			</ul>
 		</div>
@@ -54,7 +54,7 @@ nav {
 	width: 100%;
 	height: 4.2rem;
 
-	backdrop-filter: blur(1rem);
+	backdrop-filter: blur(4rem);
 	background-color: $color-background-backdrop;
 	border-bottom: 4px solid $color-gray;
 
@@ -80,6 +80,7 @@ nav {
 			display: none;
 			gap: 1rem;
 		}
+
 		.openList {
 			z-index: 6;
 			cursor: pointer;
@@ -130,12 +131,11 @@ nav {
 
 		.mobileList {
 			position: fixed;
-			z-index: 6;
+			z-index: 5;
 			top: 0;
 			left: 0;
 
 			pointer-events: none;
-			z-index: 5;
 
 			width: 100%;
 			height: 100dvh;
@@ -146,8 +146,7 @@ nav {
 			align-items: center;
 			gap: 2rem;
 
-			background-color: rgba(84, 96, 227, 0.247);
-			backdrop-filter: blur(2.4rem);
+			background-color: $color-background;
 
 			opacity: 0;
 			transition: 200ms;
