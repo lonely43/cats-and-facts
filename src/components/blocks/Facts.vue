@@ -28,7 +28,7 @@ async function getNewFact() {
 			</div>
 
 			<div class="btns">
-				<ButtonComp @click="getNewFact" type="primary">
+				<ButtonComp id="seeFact" @click="getNewFact" type="primary">
 					New fact
 				</ButtonComp>
 				<ButtonComp type="secondary">

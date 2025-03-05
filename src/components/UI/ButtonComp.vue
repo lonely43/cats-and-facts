@@ -28,6 +28,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use "/src/assets/variables" as *;
+
 button {
 	cursor: pointer;
 

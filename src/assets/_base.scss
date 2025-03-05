@@ -11,8 +11,13 @@
 
   letter-spacing: 2px;
   font-family: "Plus Jakarta Sans", serif;
+  scroll-behavior: smooth;
 }
 
+a{
+  text-decoration: none;
+  color: $color-text;
+}
 ol,ul{
   list-style: none;
 }

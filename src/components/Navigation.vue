@@ -17,24 +17,6 @@ function openList() {
 
 			<ul class="list">
 				<li>
-					<ButtonComp type="gray"> Media </ButtonComp>
-				</li>
-				<li>
-					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp type="primary"> Source </ButtonComp></a>
-				</li>
-			</ul>
-
-			<div ref="openBtn" class="mobile openList" @click="openList">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-
-			<ul ref="mobList" class="mobile mobileList">
-				<li>
-					<ButtonComp type="gray"> Media </ButtonComp>
-				</li>
-				<li>
 					<a target="blank" href="https://github.com/lonely43/cats-and-facts"><ButtonComp type="primary"> Source </ButtonComp></a>
 				</li>
 			</ul>
@@ -77,100 +59,8 @@ nav {
 		}
 
 		.list {
-			display: none;
-			gap: 1rem;
-		}
-
-		.openList {
-			z-index: 6;
-			cursor: pointer;
-
-			width: 2rem;
-			height: 1.6rem;
-
-			position: relative;
-
-			span {
-				$height: 0.2rem;
-				position: absolute;
-
-				width: 100%;
-				height: $height;
-
-				background-color: $color-text;
-
-				transition: 200ms;
-
-				&:nth-child(1) {
-					top: 0;
-				}
-				&:nth-child(2) {
-					top: calc(50%);
-					transform: translateY(-50%);
-				}
-				&:nth-child(3) {
-					bottom: 0;
-				}
-			}
-		}
-		.active {
-			span {
-				&:nth-child(1) {
-					top: 50%;
-					transform: rotate(45deg);
-				}
-				&:nth-child(2) {
-					opacity: 0;
-				}
-				&:nth-child(3) {
-					transform: rotate(-45deg);
-					top: 50%;
-				}
-			}
-		}
-
-		.mobileList {
-			position: fixed;
-			z-index: 5;
-			top: 0;
-			left: 0;
-
-			pointer-events: none;
-
-			width: 100%;
-			height: 100dvh;
-
 			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			gap: 2rem;
-
-			background-color: $color-background;
-
-			opacity: 0;
-			transition: 200ms;
-
-			li {
-				width: 100%;
-				max-width: 10rem;
-				button {
-					width: 100%;
-				}
-			}
-		}
-		.opened {
-			pointer-events: all;
-			opacity: 1;
-		}
-
-		@media screen and (min-width: 460px) {
-			.mobile {
-				display: none;
-			}
-			.list {
-				display: flex;
-			}
+			gap: 1rem;
 		}
 	}
 }

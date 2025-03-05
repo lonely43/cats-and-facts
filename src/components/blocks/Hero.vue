@@ -11,7 +11,7 @@ import CatPicture from "../UI/CatPicture.vue"
 			<h3>Facts about cats</h3>
 		</div>
 
-		<ButtonComp type="accent"> Get started </ButtonComp>
+		<ButtonComp type="accent"> <a href="#seeFact">Get started</a> </ButtonComp>
 
 		<CatPicture />
 	</div>
@@ -29,6 +29,10 @@ import CatPicture from "../UI/CatPicture.vue"
 	align-items: center;
 	flex-direction: column;
 	gap: 4rem;
+
+	a{
+		color: $color-background;
+	}
 
 	.title {
 		text-align: center;
