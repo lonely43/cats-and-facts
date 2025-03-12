@@ -15,6 +15,12 @@ onMounted(async () => {
 async function getNewFact() {
 	fact.value = "Looking for fact..."
 	fact.value = await getFact()
+
+	// for translate
+	if(lang.value !== "en"){
+		console.log("done")
+		translateFact()
+	}
 }
 
 async function translateFact() {
@@ -39,14 +45,14 @@ async function translateFact() {
 
 				<div class="dropdown">
 					<div class="dropdown-title">
-						<ButtonComp type="secondary" @click="translateFact">
+						<ButtonComp type="secondary">
 							<img src="/src/assets/imgs/globe.svg" alt="globe" />
 						</ButtonComp>
 					</div>
 
 					<ul class="dropdown-list">
 						<li v-for="code in langCodes">
-							<p @click="lang = code">{{ code }}</p>
+							<p @click="lang = code; translateFact()">{{ code }}</p>
 						</li>
 					</ul>
 				</div>
