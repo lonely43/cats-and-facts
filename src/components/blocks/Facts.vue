@@ -2,11 +2,13 @@
 import { getFact, translate } from "@/scripts/api"
 import { onMounted, ref } from "vue"
 import ButtonComp from "../UI/ButtonComp.vue"
+import Notification from "../UI/Notification.vue"
 
 const fact = ref<string>("Looking for fact...")
 
 const lang = ref<string>("ru")
 const langCodes = ref(["ru", "en", "zh"])
+const customCode = ref("")
 
 onMounted(async () => {
 	await getNewFact()
@@ -29,6 +31,10 @@ async function translateFact() {
 </script>
 
 <template>
+	<Notification>
+		Undefined lang code.
+	</Notification>
+
 	<div class="facts">
 		<div class="content">
 			<div class="info">
@@ -53,6 +59,9 @@ async function translateFact() {
 					<ul class="dropdown-list">
 						<li v-for="code in langCodes">
 							<p @click="lang = code; translateFact()">{{ code }}</p>
+						</li>
+						<li>
+							<input v-model="customCode" v-on:keyup.enter="lang = customCode; translateFact()" title="ISO 639-1" placeholder="code" type="text" name="lang" id="">
 						</li>
 					</ul>
 				</div>
@@ -195,8 +204,26 @@ async function translateFact() {
 				p {
 					cursor: pointer;
 					transition: opacity 200ms;
+
 					&:hover {
 						opacity: 0.6;
+					}
+				}
+
+				input{
+					padding: .2rem .2rem;
+
+					width: 100%;
+					text-align: center;
+
+					font-size: $size-underLink;
+
+					outline: none;
+					border: 1px solid $color-gray;
+					border-radius: .4rem;
+
+					&:focus{
+						border-color: $color-secondary;
 					}
 				}
 			}
