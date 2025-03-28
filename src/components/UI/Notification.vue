@@ -1,23 +1,29 @@
 <script setup lang="ts">
-import { ref } from "vue"
+const emit = defineEmits(["close"])
+
+import { onMounted, ref } from "vue"
 import Aftung from "./aftung.vue"
 import styles from "@/assets/variables.module.scss"
 
 const color = ref(styles.colorAccent)
 
-
+onMounted(() => {
+	setTimeout(() => {
+		emit("close")
+	}, 3000)
+})
 </script>
 <template>
 	<div class="notice-box">
 		<div class="notice-info">
 			<div class="notice-title">
-				<Aftung :color="color" />
 				<h3>Erorr</h3>
+				<Aftung :color="color" />
 			</div>
 
-			<p>
-				<slot />
-			</p>
+			<div class="slot">
+				<slot></slot>
+			</div>
 		</div>
 	</div>
 </template>
@@ -32,8 +38,7 @@ const color = ref(styles.colorAccent)
 
 	display: flex;
 
-	padding: 0.8rem 1rem;
-	padding-left: 2.4rem;
+	padding: 0.6rem 1rem;
 
 	background-color: $color-text;
 
@@ -43,18 +48,12 @@ const color = ref(styles.colorAccent)
 	.notice-info {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.6rem;
 
 		.notice-title {
-			position: relative;
-
-			svg {
-				position: absolute;
-				right: calc(100% + 0.6rem);
-				top: 50%;
-				transform: translateY(-50%);
-			}
-
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
 			h3 {
 				color: $color-accent;
 
@@ -64,10 +63,13 @@ const color = ref(styles.colorAccent)
 			}
 		}
 
-		p {
-			color: #ebebeb99;
+		.slot {
 			font-size: $size-underLink;
-			font-weight: 300;
+
+			* {
+				color: #ebebeb99;
+				font-weight: 400;
+			}
 		}
 	}
 }

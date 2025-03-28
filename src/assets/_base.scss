@@ -16,7 +16,12 @@
 
 a{
   text-decoration: none;
-  color: $color-text;
+  color: transparent;
+
+  transition: opacity 200ms;
+  &:hover{
+    opacity: 0.8;
+  }
 }
 ol,ul{
   list-style: none;

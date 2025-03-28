@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import { getFact, translate } from "@/scripts/api"
+
 import { onMounted, ref } from "vue"
+
 import ButtonComp from "../UI/ButtonComp.vue"
 import Notification from "../UI/Notification.vue"
+
+import iso6391Codes from "@/scripts/utils"
 
 const fact = ref<string>("Looking for fact...")
 
 const lang = ref<string>("ru")
 const langCodes = ref(["ru", "en", "zh"])
 const customCode = ref("")
+
+const showError = ref<boolean>(false)
 
 onMounted(async () => {
 	await getNewFact()
@@ -19,8 +25,7 @@ async function getNewFact() {
 	fact.value = await getFact()
 
 	// for translate
-	if(lang.value !== "en"){
-		console.log("done")
+	if (lang.value !== "en") {
 		translateFact()
 	}
 }
@@ -28,12 +33,23 @@ async function getNewFact() {
 async function translateFact() {
 	fact.value = await translate(fact.value, lang.value)
 }
+
+function isValidCode(code: string) {
+	if (/^[a-z]{2}$/.test(code.toLowerCase()) && iso6391Codes.includes(code.toLowerCase())) {
+		showError.value = false
+		lang.value = code
+	} else {
+		showError.value = true
+	}
+}
 </script>
 
 <template>
-	<Notification>
-		Undefined ISO 639-1 code.
-	</Notification>
+	<Transition name="errorNotification">
+		<Notification @close="showError = false" v-if="showError">
+			<p>Undefined ISO 639-1 code. <a style="border-bottom: 0.1rem solid #ebebeb99" target="_blank" href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">See list</a></p>
+		</Notification>
+	</Transition>
 
 	<div class="facts">
 		<div class="content">
@@ -58,10 +74,14 @@ async function translateFact() {
 
 					<ul class="dropdown-list">
 						<li v-for="code in langCodes">
-							<p @click="lang = code; translateFact()">{{ code }}</p>
+							<p @click="lang = code; translateFact()">
+								{{ code }}
+							</p>
 						</li>
+
 						<li>
-							<input v-model="customCode" v-on:keyup.enter="lang = customCode; translateFact()" title="ISO 639-1" placeholder="code" type="text" name="langCode">
+							<input v-model="customCode" v-on:keyup.enter="isValidCode(customCode); translateFact()" title="ISO 639-1" placeholder="code" type="text" name="langCode"
+							/>
 						</li>
 					</ul>
 				</div>
@@ -72,6 +92,14 @@ async function translateFact() {
 
 <style lang="scss" scoped>
 @use "/src/assets/variables" as *;
+
+.errorNotification-enter-active, .errorNotification-leave-active{
+   transition: transform 400ms, opacity 300ms;
+}
+.errorNotification-enter-from, .errorNotification-leave-to{
+	transform: translateY(10rem);
+   opacity: 0;
+}
 
 .facts {
 	min-height: 100dvh;
@@ -144,11 +172,11 @@ async function translateFact() {
 		position: relative;
 
 		@keyframes showDrop {
-			0%{
+			0% {
 				display: flex;
 				opacity: 0;
 			}
-			100%{
+			100% {
 				display: flex;
 				opacity: 1;
 			}
@@ -161,11 +189,11 @@ async function translateFact() {
 
 		.dropdown-list {
 			animation: showDrop 400ms;
-			$dropdown-gap: .6rem;
+			$dropdown-gap: 0.6rem;
 
 			position: relative;
 
-			&::before{
+			&::before {
 				position: absolute;
 				left: 0;
 				bottom: 101%;
@@ -210,8 +238,8 @@ async function translateFact() {
 					}
 				}
 
-				input{
-					padding: .2rem .2rem;
+				input {
+					padding: 0.2rem 0.2rem;
 
 					width: 100%;
 					min-width: 2rem;
@@ -221,9 +249,9 @@ async function translateFact() {
 
 					outline: none;
 					border: 1px solid $color-gray;
-					border-radius: .4rem;
+					border-radius: 0.4rem;
 
-					&:focus{
+					&:focus {
 						border-color: $color-secondary;
 					}
 				}

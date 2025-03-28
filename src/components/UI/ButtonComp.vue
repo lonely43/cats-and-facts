@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue"
+import { onMounted, ref, useTemplateRef } from "vue"
 import { setBtnStyles, getPreset, setPreset } from "./btnUtils";
 
 const props = defineProps<{
@@ -7,22 +7,19 @@ const props = defineProps<{
 	type: string
 }>()
 
-const btn = ref<HTMLElement | any>()
+const btn = useTemplateRef("button")
 // const text = ref()
 
 let preset = getPreset()
 
 onMounted(() => {
 	setPreset(props.type, preset)
-
    setBtnStyles(btn, preset)
-
-	// text.value =  props.content
 })
 </script>
 
 <template>
-	<button ref="btn">
+	<button ref="button">
 		<slot></slot>
 	</button>
 </template>
