@@ -1,5 +1,6 @@
 {
   "name": "cats-and-facts",
+  "author": "lonely43",
   "version": "0.0.0",
   "private": true,
   "type": "module",
