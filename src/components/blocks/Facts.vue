@@ -10,8 +10,8 @@ import iso6391Codes from "@/scripts/utils"
 
 const fact = ref<string>("Looking for fact...")
 
-const lang = ref<string>("ru")
-const langCodes = ref(["ru", "en", "zh"])
+const lang = ref<string>("en")
+const langCodes = ref(["en", "ru", "zh"])
 const customCode = ref("")
 
 const showError = ref<boolean>(false)
