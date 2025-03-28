@@ -26,6 +26,7 @@ const color = ref(styles.colorAccent)
 
 .notice-box {
 	position: fixed;
+	z-index: 6;
 	right: 1rem;
 	bottom: 0.8rem;
 

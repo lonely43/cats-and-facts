@@ -32,7 +32,7 @@ async function translateFact() {
 
 <template>
 	<Notification>
-		Undefined lang code.
+		Undefined ISO 639-1 code.
 	</Notification>
 
 	<div class="facts">
@@ -61,7 +61,7 @@ async function translateFact() {
 							<p @click="lang = code; translateFact()">{{ code }}</p>
 						</li>
 						<li>
-							<input v-model="customCode" v-on:keyup.enter="lang = customCode; translateFact()" title="ISO 639-1" placeholder="code" type="text" name="lang" id="">
+							<input v-model="customCode" v-on:keyup.enter="lang = customCode; translateFact()" title="ISO 639-1" placeholder="code" type="text" name="langCode">
 						</li>
 					</ul>
 				</div>
@@ -214,6 +214,7 @@ async function translateFact() {
 					padding: .2rem .2rem;
 
 					width: 100%;
+					min-width: 2rem;
 					text-align: center;
 
 					font-size: $size-underLink;

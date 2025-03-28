@@ -11,7 +11,9 @@ import CatPicture from "../UI/CatPicture.vue"
 			<h3>Facts about cats</h3>
 		</div>
 
-		<ButtonComp type="accent"> <a href="#seeFact">Get started</a> </ButtonComp>
+		<a href="#seeFact">
+			<ButtonComp type="accent"> Get started </ButtonComp>
+		</a>
 
 		<CatPicture />
 	</div>
